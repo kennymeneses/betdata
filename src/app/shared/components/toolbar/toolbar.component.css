@@ -1,0 +1,53 @@
+.toolbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.menus-list{
+    display: flex;
+    flex-direction: row;    
+}
+
+.menus-list a{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    padding:0;
+}
+
+mat-form-field
+{
+    width: 30%;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media screen 
+and (max-width:1200px)
+and (orientation: portrait)
+{
+    .menus-list{
+        display: none;
+    }
+
+    mat-form-field{
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 80%;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

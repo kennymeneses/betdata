@@ -1,0 +1,62 @@
+[
+    {
+        "teamName" : "Real Madrid",
+        "country": "Spain",
+        "idTeam": 541 
+    },
+    {
+        "teamName" : "FC Barcelona",
+        "country": "Spain",
+        "idTeam": 529
+    },
+    {
+        "teamName" : "Atletico Madrid",
+        "country": "Spain",
+        "idTeam": 530
+    },
+    {
+        "teamName" : "Athletic Club",
+        "country": "Spain",
+        "idTeam": 531
+    },
+    {
+        "teamName" : "Valencia CF",
+        "country": "Spain",
+        "idTeam": 532
+    },
+    {
+        "teamName" : "RCD Mallorca",
+        "country": "Spain",
+        "idTeam": 533
+    },
+    {
+        "teamName" : "Real Betis",
+        "country": "Spain",
+        "idTeam": 543
+    },
+    {
+        "teamName" : "Getafe CF",
+        "country": "Spain",
+        "idTeam": 546
+    },
+    {
+        "teamName" : "Girona FC",
+        "country": "Spain",
+        "idTeam": 547
+    },
+    {
+        "teamName" : "Cadiz CF",
+        "country": "Spain",
+        "idTeam": 724
+    },
+    {
+        "teamName": "Elche CF",
+        "country": "Spain",
+        "idTeam": 797
+    },
+    {
+        "teamName": "UD Almeria",
+        "country": "Spain",
+        "idTeam": 797
+    }
+]

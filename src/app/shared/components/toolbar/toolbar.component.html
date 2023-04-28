@@ -1,1 +1,31 @@
-<p>toolbar works!</p>
+<mat-toolbar color="primary" class="toolbar-container">
+    <mat-toolbar-row>
+
+        <button mat-icon-button class="btn-menu" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="toolbar-wrapper">
+
+            <div class ="menus-list">
+                <a mat-button [routerLink]="['/']"> Home </a>
+                <a mat-button [routerLink]="['/']"> Competitions </a>      
+            </div>
+
+            <div class="search-container">
+                <mat-form-field appearance="fill" class="search-field">
+                    <mat-label>Buscar equipo. . .</mat-label>
+                    <input autocomplete="off" matInput #inputSearch  (keyup)="onKeyUp($event)" [matAutocomplete]="auto" />
+                    <mat-icon matPrefix color="primary">search</mat-icon>
+                    <mat-icon matSuffix color="primary" (click)="onCancel($event)">close</mat-icon>   
+
+                    <mat-autocomplete (optionSelected)='onOptionSelected($event)' #auto="matAutocomplete">
+                        <mat-option *ngFor="let data of dataStored" [value]="data">
+                        {{  data.teamName  }}
+                        </mat-option>
+                    </mat-autocomplete>
+
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
