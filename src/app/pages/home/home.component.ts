@@ -144,6 +144,8 @@ export class HomeComponent {
   //https://api-football-v1.p.rapidapi.com/v3/standings?season=2023&league=281  get info de todos los equipos de una liga del tal año
   //https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2022&team=33
 
+  //https://www.thesportsdb.com/api.php
+
   //
   loadMainData(team: any)
   {
