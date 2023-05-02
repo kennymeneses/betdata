@@ -1,3 +1,11 @@
+mat-toolbar{
+    background-color: black;
+}
+
+mat-icon{
+    color: white;
+}
+
 .toolbar-wrapper {
     display: flex;
     flex-direction: row;
@@ -12,24 +20,30 @@
 .menus-list a{
     margin-top: auto;
     margin-bottom: auto;
+    color:white;
 }
 
-.search-container{
+.logo-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     flex: 1;
-    padding:0;
+    overflow: hidden;
+
 }
 
-mat-form-field
-{
-    width: 30%;
-    margin-right: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
+.logo-container a{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+img{
+    height: 80%;
+    margin: auto;
+}
+
 
 @media screen 
 and (max-width:1200px)
@@ -39,15 +53,9 @@ and (orientation: portrait)
         display: none;
     }
 
-    mat-form-field{
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 80%;
-        margin-right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .logo-container{
+        margin-right: 2%;
     }
+
 }
 

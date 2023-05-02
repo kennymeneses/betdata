@@ -1,0 +1,55 @@
+h1, h2{
+    text-align: center;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field{
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-option:nth-child(even) 
+{
+    background-color: #7DBF98;
+}
+
+mat-option:nth-child(odd) 
+{
+    background-color: #8FDCAE;
+}
+
+.cont-card-presentation-team{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+mat-card-subtitle{
+    text-align: center;
+}
+
+@media screen 
+and (max-width:1200px)
+and (orientation: portrait)
+{
+    mat-form-field{
+        width: 100%;
+    }
+    mat-autocomplete{
+        width: 100%;
+    }
+    mat-option{
+        width: 100;
+    }
+
+    .cont-card-presentation-team{
+        width: 100%;
+    }
+}

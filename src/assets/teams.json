@@ -15,7 +15,17 @@
         "idTeam": 530
     },
     {
-        "teamName" : "Athletic Club",
+        "teamName" : "RCD Espanyol",
+        "country": "Spain",
+        "idTeam": 540
+    },
+    {
+        "teamName" : "Celta Vigo FC",
+        "country": "Spain",
+        "idTeam": 538
+    },
+    {
+        "teamName" : "Athletic Club de Bilbao",
         "country": "Spain",
         "idTeam": 531
     },
@@ -58,5 +68,90 @@
         "teamName": "UD Almeria",
         "country": "Spain",
         "idTeam": 797
+    },
+    {
+        "teamName": "Sporting Cristal",
+        "country": "Peru",
+        "idTeam": 2546
+    },
+    {
+        "teamName": "Academia Cantolao",
+        "country": "Peru",
+        "idTeam": 2543
+    },
+    {
+        "teamName": "Deportivo Garcilaso",
+        "country": "Peru",
+        "idTeam": 20960
+    },
+    {
+        "teamName": "Carlos A. Mannucci",
+        "country": "Peru",
+        "idTeam": 2551
+    },
+    {
+        "teamName": "Cesar Vallejo",
+        "country": "Peru",
+        "idTeam": 2541
+    },
+    {
+        "teamName": "Sport Huancayo",
+        "country": "Peru",
+        "idTeam": 2555
+    },
+    {
+        "teamName": "Deportivo Municipal",
+        "country": "Peru",
+        "idTeam": 2545
+    },
+    {
+        "teamName": "Union Comercio",
+        "country": "Peru",
+        "idTeam": 2552
+    },
+    {
+        "teamName": "Atletico Grau",
+        "country": "Peru",
+        "idTeam": 2564
+    },
+    {
+        "teamName": "Alianza Lima",
+        "country": "Peru",
+        "idTeam": 2553
+    },
+    {
+        "teamName": "FBC Melgar",
+        "country": "Peru",
+        "idTeam": 2554
+    },
+    {
+        "teamName": "Sport Boys",
+        "country": "Peru",
+        "idTeam": 2544
+    },
+    {
+        "teamName": "Alianza Atletico",
+        "country": "Peru",
+        "idTeam": 2560
+    },
+    {
+        "teamName": "Cusco FC",
+        "country": "Peru",
+        "idTeam": 10013
+    },
+    {
+        "teamName": "UTC Cajamarca",
+        "country": "Peru",
+        "idTeam": 2539
+    },
+    {
+        "teamName": "Universitario de Deportes",
+        "country": "Peru",
+        "idTeam": 2540
+    },
+    {
+        "teamName": "Cienciano",
+        "country": "Peru",
+        "idTeam": 2562
     }
 ]
