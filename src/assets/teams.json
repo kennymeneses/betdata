@@ -2,156 +2,187 @@
     {
         "teamName" : "Real Madrid",
         "country": "Spain",
-        "idTeam": 541 
+        "idTeam": 133738,
+        "season": "2022-2023"
     },
     {
         "teamName" : "FC Barcelona",
         "country": "Spain",
-        "idTeam": 529
+        "idTeam": 133739,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Atletico Madrid",
         "country": "Spain",
-        "idTeam": 530
+        "idTeam": 133729,
+        "season": "2022-2023"
     },
     {
         "teamName" : "RCD Espanyol",
         "country": "Spain",
-        "idTeam": 540
+        "idTeam": 540,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Celta Vigo FC",
         "country": "Spain",
-        "idTeam": 538
+        "idTeam": 538,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Athletic Club de Bilbao",
         "country": "Spain",
-        "idTeam": 531
+        "idTeam": 531,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Valencia CF",
         "country": "Spain",
-        "idTeam": 532
+        "idTeam": 532,
+        "season": "2022-2023"
     },
     {
         "teamName" : "RCD Mallorca",
         "country": "Spain",
-        "idTeam": 533
+        "idTeam": 533,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Real Betis",
         "country": "Spain",
-        "idTeam": 543
+        "idTeam": 543,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Getafe CF",
         "country": "Spain",
-        "idTeam": 546
+        "idTeam": 546,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Girona FC",
         "country": "Spain",
-        "idTeam": 547
+        "idTeam": 547,
+        "season": "2022-2023"
     },
     {
         "teamName" : "Cadiz CF",
         "country": "Spain",
-        "idTeam": 724
+        "idTeam": 724,
+        "season": "2022-2023"
     },
     {
         "teamName": "Elche CF",
         "country": "Spain",
-        "idTeam": 797
+        "idTeam": 797,
+        "season": "2022-2023"
     },
     {
         "teamName": "UD Almeria",
         "country": "Spain",
-        "idTeam": 797
+        "idTeam": 797,
+        "season": "2022-2023"
     },
     {
         "teamName": "Sporting Cristal",
         "country": "Peru",
-        "idTeam": 2546
+        "idTeam": 138326,
+        "season":"2023"
     },
     {
         "teamName": "Academia Cantolao",
         "country": "Peru",
-        "idTeam": 2543
+        "idTeam": 2543,
+        "season":"2023"
     },
     {
         "teamName": "Deportivo Garcilaso",
         "country": "Peru",
-        "idTeam": 20960
+        "idTeam": 20960,
+        "season":"2023"
     },
     {
         "teamName": "Carlos A. Mannucci",
         "country": "Peru",
-        "idTeam": 2551
+        "idTeam": 2551,
+        "season":"2023"
     },
     {
         "teamName": "Cesar Vallejo",
         "country": "Peru",
-        "idTeam": 2541
+        "idTeam": 2541,
+        "season":"2023"
     },
     {
         "teamName": "Sport Huancayo",
         "country": "Peru",
-        "idTeam": 2555
+        "idTeam": 138325,
+        "season":"2023"
     },
     {
         "teamName": "Deportivo Municipal",
         "country": "Peru",
-        "idTeam": 2545
+        "idTeam": 2545,
+        "season":"2023"
     },
     {
         "teamName": "Union Comercio",
         "country": "Peru",
-        "idTeam": 2552
+        "idTeam": 2552,
+        "season":"2023"
     },
     {
         "teamName": "Atletico Grau",
         "country": "Peru",
-        "idTeam": 2564
+        "idTeam": 138313,
+        "season":"2023"
     },
     {
         "teamName": "Alianza Lima",
         "country": "Peru",
-        "idTeam": 2553
+        "idTeam": 138311,
+        "season":"2023"
     },
     {
         "teamName": "FBC Melgar",
         "country": "Peru",
-        "idTeam": 2554
+        "idTeam": 138323,
+        "season":"2023"
     },
     {
         "teamName": "Sport Boys",
         "country": "Peru",
-        "idTeam": 2544
+        "idTeam": 138324,
+        "season":"2023"
     },
     {
         "teamName": "Alianza Atletico",
         "country": "Peru",
-        "idTeam": 2560
+        "idTeam": 140803,
+        "season":"2023"
     },
     {
         "teamName": "Cusco FC",
         "country": "Peru",
-        "idTeam": 10013
+        "idTeam": 138320,
+        "season":"2023"
     },
     {
         "teamName": "UTC Cajamarca",
         "country": "Peru",
-        "idTeam": 2539
+        "idTeam": 144717,
+        "season":"2023"
     },
     {
         "teamName": "Universitario de Deportes",
         "country": "Peru",
-        "idTeam": 2540
+        "idTeam": 138329,
+        "season":"2023"
     },
     {
         "teamName": "Cienciano",
         "country": "Peru",
-        "idTeam": 2562
+        "idTeam": 138319,
+        "season":"2023"
     }
 ]

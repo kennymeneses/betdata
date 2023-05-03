@@ -9,6 +9,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSidenav } from '@angular/material/sidenav';
 import { TeamModel } from 'src/app/shared/shared.module';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-home',
@@ -23,11 +24,12 @@ export class HomeComponent {
   dataStored: TeamModel[] = [];
   dataTemp : TeamModel[] = [];
 
-  arrTournaments : string[] = [];
+  arrTeamsLeague : any[] = [];
+  displayedColumns: string[] = ['Nombre', 'Racha', 'Jugados', 'Puntos'];
 
   imgTeamsrc! : string;
   countryTeam! : string;
-  
+  localLeagueTeam! : string;
 
   teamSelected! : TeamModel;
 
@@ -85,7 +87,8 @@ export class HomeComponent {
   {
     this.dataStored = [];
     this.inputSearch.nativeElement.value = '';
-    this.dataTemp = this.dataSource;    
+    this.dataTemp = this.dataSource;  
+    this.arrTeamsLeague = [];  
   }
 
   onOptionSelected(event: MatAutocompleteSelectedEvent)
@@ -97,64 +100,86 @@ export class HomeComponent {
     this.inputSearch.nativeElement.value = event.option.value.teamName;
     this.teamSelected = event.option.value;
 
-    this.getData(this.teamSelected.idTeam);
+    this.getData(this.teamSelected);
   }
 
-  getData(idTeam: number)
+  getData(_teamSelected: TeamModel)
   {
-    let urlGetTeamById = 'https://api-football-v1.p.rapidapi.com/v3/teams?id=' + idTeam.toString();
+    let urlGetTeamById = 'https://www.thesportsdb.com/api/v1/json/60130162/lookupteam.php?id=' + _teamSelected.idTeam.toString();
 
     if(localStorage.getItem(urlGetTeamById) !== null)
     {
       console.log(urlGetTeamById + " SI se encuentra en localstorage");
 
       let jsonResponse = JSON.parse(localStorage.getItem(urlGetTeamById)!);
+
+      this.imgTeamsrc = jsonResponse.strTeamBadge;
+      this.localLeagueTeam = jsonResponse.idLeague;
       console.log(jsonResponse);
 
-      this.loadMainData(jsonResponse)
+      console.log(_teamSelected.idTeam.toString());
+      this.loadMainData(_teamSelected);
     }
     else
     {
       console.log(urlGetTeamById + " NO se encuentra en el localStorage");
+      console.log(_teamSelected.idTeam);
 
-      const headers = new HttpHeaders()
-      .set('X-RapidAPI-Key', '8201a5f973msh5d4fd471f4ab4d3p104801jsn8c07ee654921')
-      .set('X-RapidAPI-Host', 'api-football-v1.p.rapidapi.com');
-
-      this.http.get('https://api-football-v1.p.rapidapi.com/v3/teams?id='+ idTeam.toString(), { headers })
+      this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookupteam.php?id='+ _teamSelected.idTeam)
       .subscribe((data: any) => 
                 {   
-                    console.log(data.response[0]);
-                    this.loadMainData(data.response[0]);
-                    localStorage.setItem(urlGetTeamById, JSON.stringify(data.response[0]))
-                });
-
-      this.http.get('https://api-football-v1.p.rapidapi.com/v3/leagues?team='+idTeam.toString(), {headers} )
-      .subscribe((data: any) =>
-                {
-
+                    console.log("Data Recibida");
+                    console.log(data);
+                    console.log("Equipo Seleccionado");
+                    console.log(data.teams[0]);
+                    this.loadMainData(_teamSelected);
+                    localStorage.setItem(urlGetTeamById, JSON.stringify(data.teams[0]));
+                    
+                    this.localLeagueTeam = data.teams[0].idLeague;
+                    this.imgTeamsrc = data.teams[0].strTeamBadge;
                 });
     }
   }
-
-  //https://api-football-v1.p.rapidapi.com/v3/teams?id=2553
-  //https://api-football-v1.p.rapidapi.com/v3/leagues?team=2553 get las ligas de un equipo
-  //https://api-football-v1.p.rapidapi.com/v3/players/squads?team=529 todos los players del equipo
-  //https://api-football-v1.p.rapidapi.com/v3/coachs?team=2553
-  //https://api-football-v1.p.rapidapi.com/v3/standings?season=2023&league=281  get info de todos los equipos de una liga del tal año
-  //https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2022&team=33
-
-  //https://www.thesportsdb.com/api.php
-
-  //
-  loadMainData(team: any)
+  //https://www.thesportsdb.com/api/v1/json/60130162/searchevents.php?e=Real_Madrid_vs_Ath_Madrid
+  //https://www.thesportsdb.com/api/v1/json/60130162/eventslast.php?id=133602  last events by teamId
+  //https://www.thesportsdb.com/api/v1/json/60130162/lookupeventstats.php?id=1032723
+  loadMainData(_teamSelected: TeamModel)
   {
-    this.imgTeamsrc = team.team.logo;
-    this.countryTeam = team.team.country;
+    console.log("estoy en loadMainData");
+    console.log(_teamSelected);
+
+    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/eventslast.php?id='+ _teamSelected.idTeam)
+    .subscribe((data: any) => 
+              {   
+                  console.log("last 5 events");
+                  console.log(data);                  
+              });
+
+    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookup_all_players.php?id='+ _teamSelected.idTeam)
+    .subscribe((data: any) => 
+              {   
+                  console.log("Former Team");
+                  console.log(data);                  
+              });
+
+    console.log('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+this.localLeagueTeam +'&s='+ _teamSelected.season);
+    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+this.localLeagueTeam +'&s='+ _teamSelected.season)
+    .subscribe((data: any) => 
+              {   
+                  this.arrTeamsLeague = data.table;
+                  console.log("info local league");
+                  console.log(data);                  
+              });
+    //https://www.thesportsdb.com/api/v1/json/3/lookup_all_players.php?id=
+
+    //https://www.thesportsdb.com/api/v1/json/60130162/eventslast.php?id=133602
+    //https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l=4328&s=2022-2023  posiciones premier
   }
 
-  loadTournaments(team: any)
+  SorterStreakTeam(streak: String)
   {
-
+  
   }
 }
+
+

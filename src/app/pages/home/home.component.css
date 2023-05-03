@@ -35,6 +35,31 @@ mat-card-subtitle{
     text-align: center;
 }
 
+.img-logo-team{
+    width: 33%;
+}
+
+table{
+    /* width: auto; */
+    border: 1px solid red;
+    max-width: 10rem;
+    width: 100%; 
+}
+
+th{
+    border: blue solid 1px;
+    /* display: inline-block; */
+    /* display: inline;
+    width: 4rem; */
+}
+td{
+    border: black solid 1px;
+    /* display: inline-block; */
+    /* display: inline;
+    width: 4rem; */
+    /* width: 5rem; */
+}
+
 @media screen 
 and (max-width:1200px)
 and (orientation: portrait)
@@ -51,5 +76,9 @@ and (orientation: portrait)
 
     .cont-card-presentation-team{
         width: 100%;
+    }
+
+    .img-logo-team{
+        width: 50%;
     }
 }
