@@ -39,25 +39,34 @@ mat-card-subtitle{
     width: 33%;
 }
 
-table{
-    /* width: auto; */
-    border: 1px solid red;
+.cont-table{
+    display: flex;
+    flex-direction: column;
     max-width: 10rem;
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.special-row{
+    background-color: yellow;
+}
+
+.cont-last-results{
+    max-width: 25rem;
     width: 100%; 
 }
 
-th{
-    border: blue solid 1px;
-    /* display: inline-block; */
-    /* display: inline;
-    width: 4rem; */
+.result-winner{
+    background-color: #7DBF98;
 }
-td{
-    border: black solid 1px;
-    /* display: inline-block; */
-    /* display: inline;
-    width: 4rem; */
-    /* width: 5rem; */
+
+.result-drawn{
+    background-color: gray;
+}
+
+.result-defeat{
+    background-color: red;
 }
 
 @media screen 

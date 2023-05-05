@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, inject, Input, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -10,15 +10,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSidenav } from '@angular/material/sidenav';
 import { TeamModel } from 'src/app/shared/shared.module';
 import { MatTable } from '@angular/material/table';
+import { CdkTable, RowOutlet } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   @Input() sidenav!: MatSidenav;
   http = inject(HttpClient);
+
 
   dataSource: TeamModel[] = [];
   dataStored: TeamModel[] = [];
@@ -27,6 +29,10 @@ export class HomeComponent {
   arrTeamsLeague : any[] = [];
   displayedColumns: string[] = ['Nombre', 'Racha', 'Jugados', 'Puntos'];
 
+  arrLastResults : any[] = [];
+  displayedColumnsResults : string[] = ['Fecha', 'Torneo', 'Equipo Local', 'Resultado', 'Equipo Visitante', 'Action'];
+
+  teamName! : string;
   imgTeamsrc! : string;
   countryTeam! : string;
   localLeagueTeam! : string;
@@ -36,6 +42,8 @@ export class HomeComponent {
   @ViewChild('inputSearch', { static: true }) inputSearch!: ElementRef;
   @ViewChild('matCardTitle', { static: true }) matCardTitle!: ElementRef;
   @ViewChild('imgLogoTeam', { static: true }) imgLogoTeam!: ElementRef;
+
+
 
   ngOnInit(): void{  
 
@@ -47,8 +55,8 @@ export class HomeComponent {
 
         console.log(this.dataTemp);
       })
-
   }
+
 
   onKeyUp(value: any)
   {
@@ -115,6 +123,7 @@ export class HomeComponent {
 
       this.imgTeamsrc = jsonResponse.strTeamBadge;
       this.localLeagueTeam = jsonResponse.idLeague;
+      this.teamName = jsonResponse.strTeam;
       console.log(jsonResponse);
 
       console.log(_teamSelected.idTeam.toString());
@@ -137,6 +146,7 @@ export class HomeComponent {
                     
                     this.localLeagueTeam = data.teams[0].idLeague;
                     this.imgTeamsrc = data.teams[0].strTeamBadge;
+                    this.teamName = data.teams[0].strTeam;
                 });
     }
   }
@@ -151,8 +161,9 @@ export class HomeComponent {
     this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/eventslast.php?id='+ _teamSelected.idTeam)
     .subscribe((data: any) => 
               {   
+                  this.arrLastResults = data.results;
                   console.log("last 5 events");
-                  console.log(data);                  
+                  console.log(data.results);                  
               });
 
     this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookup_all_players.php?id='+ _teamSelected.idTeam)
@@ -162,13 +173,12 @@ export class HomeComponent {
                   console.log(data);                  
               });
 
-    console.log('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+this.localLeagueTeam +'&s='+ _teamSelected.season);
-    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+this.localLeagueTeam +'&s='+ _teamSelected.season)
+    console.log('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+_teamSelected.idlocalLeague +'&s='+ _teamSelected.season);
+    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l='+_teamSelected.idlocalLeague +'&s='+ _teamSelected.season)
     .subscribe((data: any) => 
               {   
-                  this.arrTeamsLeague = data.table;
-                  console.log("info local league");
-                  console.log(data);                  
+                  this.arrTeamsLeague = [];
+                  this.arrTeamsLeague = data.table;              
               });
     //https://www.thesportsdb.com/api/v1/json/3/lookup_all_players.php?id=
 
@@ -176,9 +186,58 @@ export class HomeComponent {
     //https://www.thesportsdb.com/api/v1/json/60130162/lookuptable.php?l=4328&s=2022-2023  posiciones premier
   }
 
-  SorterStreakTeam(streak: String)
+  isSpecialRow(data: any): boolean
   {
-  
+    return data === this.teamName;
+  }
+
+  SetBackgroundColorVictory(data: any) :boolean
+  {
+    if(this.teamName == data.strHomeTeam)
+    {
+      if(parseInt(data.intHomeScore) > parseInt(data.intAwayScore))
+      {
+        return true;
+      }
+    }
+    else
+    {
+      if(parseInt(data.intAwayScore) > parseInt(data.intHomeScore))
+      {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  SetBackgroundColorDraw(data: any):boolean
+  {
+    if(parseInt(data.intHomeScore) == parseInt(data.intAwayScore))
+    {
+      return true;
+    }
+
+    return false;
+  }
+
+  SetBackgroundColorDefeat(data: any):boolean
+  {
+    if(this.teamName == data.strHomeTeam)
+    {
+      if(parseInt(data.intHomeScore) < parseInt(data.intAwayScore))
+      {
+        return true;
+      }
+    }
+    else
+    {
+      if(parseInt(data.intAwayScore) < parseInt(data.intHomeScore))
+      {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
 

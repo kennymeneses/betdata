@@ -3,48 +3,56 @@
         "teamName" : "Real Madrid",
         "country": "Spain",
         "idTeam": 133738,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "FC Barcelona",
         "country": "Spain",
         "idTeam": 133739,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "Atletico Madrid",
         "country": "Spain",
         "idTeam": 133729,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "RCD Espanyol",
         "country": "Spain",
         "idTeam": 540,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "Celta Vigo FC",
         "country": "Spain",
         "idTeam": 538,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "Athletic Club de Bilbao",
         "country": "Spain",
         "idTeam": 531,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "Valencia CF",
         "country": "Spain",
         "idTeam": 532,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
         "teamName" : "RCD Mallorca",
         "country": "Spain",
         "idTeam": 533,
+        "idlocalLeague": 4335,
         "season": "2022-2023"
     },
     {
@@ -87,102 +95,119 @@
         "teamName": "Sporting Cristal",
         "country": "Peru",
         "idTeam": 138326,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Academia Cantolao",
         "country": "Peru",
         "idTeam": 2543,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Deportivo Garcilaso",
         "country": "Peru",
         "idTeam": 20960,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Carlos A. Mannucci",
         "country": "Peru",
         "idTeam": 2551,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Cesar Vallejo",
         "country": "Peru",
         "idTeam": 2541,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Sport Huancayo",
         "country": "Peru",
         "idTeam": 138325,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Deportivo Municipal",
         "country": "Peru",
         "idTeam": 2545,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Union Comercio",
         "country": "Peru",
         "idTeam": 2552,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Atletico Grau",
         "country": "Peru",
         "idTeam": 138313,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Alianza Lima",
         "country": "Peru",
         "idTeam": 138311,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "FBC Melgar",
         "country": "Peru",
         "idTeam": 138323,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Sport Boys",
         "country": "Peru",
         "idTeam": 138324,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Alianza Atletico",
         "country": "Peru",
         "idTeam": 140803,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Cusco FC",
         "country": "Peru",
         "idTeam": 138320,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "UTC Cajamarca",
         "country": "Peru",
         "idTeam": 144717,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Universitario de Deportes",
         "country": "Peru",
         "idTeam": 138329,
+        "idlocalLeague": 4688,
         "season":"2023"
     },
     {
         "teamName": "Cienciano",
         "country": "Peru",
         "idTeam": 138319,
+        "idlocalLeague": 4688,
         "season":"2023"
     }
 ]
