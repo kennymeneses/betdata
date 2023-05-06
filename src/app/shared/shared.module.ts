@@ -5,7 +5,9 @@ import { MaterialModule } from './material/material.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 export { TeamModel } from './models/team.model';
+export { MatchDetailModel } from './models/matchdetails.model'
 import { HttpClientModule } from '@angular/common/http';
+import { InfomatchComponent } from './components/infomatch/infomatch.component';
 
 @NgModule({
   imports: [
@@ -14,10 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     HttpClientModule
   ],
-  declarations: [ToolbarComponent, SidenavComponent],
+  declarations: [ToolbarComponent, SidenavComponent, InfomatchComponent],
   exports : [
     ToolbarComponent,
-    SidenavComponent
-  ]
+    SidenavComponent,
+    InfomatchComponent
+  ],
+  entryComponents : [InfomatchComponent]
 })
 export class SharedModule { }

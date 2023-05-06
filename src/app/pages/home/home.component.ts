@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
+import { Component, inject, Input, OnInit, ViewChild,AfterViewInit, ElementRef, Inject } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -9,8 +9,10 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSidenav } from '@angular/material/sidenav';
 import { TeamModel } from 'src/app/shared/shared.module';
+import { MatchDetailModel } from 'src/app/shared/shared.module'
 import { MatTable } from '@angular/material/table';
-import { CdkTable, RowOutlet } from '@angular/cdk/table';
+import { MatDialog } from '@angular/material/dialog';
+import { InfomatchComponent } from 'src/app/shared/components/infomatch/infomatch.component';
 
 @Component({
   selector: 'app-home',
@@ -18,9 +20,10 @@ import { CdkTable, RowOutlet } from '@angular/cdk/table';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  @Input() sidenav!: MatSidenav;
   http = inject(HttpClient);
 
+  constructor(private dialog: MatDialog) { 
+  }  
 
   dataSource: TeamModel[] = [];
   dataStored: TeamModel[] = [];
@@ -30,7 +33,7 @@ export class HomeComponent implements OnInit{
   displayedColumns: string[] = ['Nombre', 'Racha', 'Jugados', 'Puntos'];
 
   arrLastResults : any[] = [];
-  displayedColumnsResults : string[] = ['Fecha', 'Torneo', 'Equipo Local', 'Resultado', 'Equipo Visitante', 'Action'];
+  displayedColumnsResults : string[] = ['Fecha', 'Torneo', 'Local', 'Resultado', 'Visitante', 'Detalles'];
 
   teamName! : string;
   imgTeamsrc! : string;
@@ -42,8 +45,6 @@ export class HomeComponent implements OnInit{
   @ViewChild('inputSearch', { static: true }) inputSearch!: ElementRef;
   @ViewChild('matCardTitle', { static: true }) matCardTitle!: ElementRef;
   @ViewChild('imgLogoTeam', { static: true }) imgLogoTeam!: ElementRef;
-
-
 
   ngOnInit(): void{  
 
@@ -238,6 +239,21 @@ export class HomeComponent implements OnInit{
     }
 
     return false;
+  }
+
+  openDialog(idEvent: string)
+  {
+    console.log(idEvent);
+    this.http.get('https://www.thesportsdb.com/api/v1/json/60130162/lookupeventstats.php?id='+idEvent)
+    .subscribe((data:any) =>
+              {
+                  console.log(data);
+              })
+
+    this.dialog.open(InfomatchComponent,{
+      width:'90%',
+      maxWidth: '500px',
+    })
   }
 }
 
